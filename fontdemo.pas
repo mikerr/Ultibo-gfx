@@ -29,6 +29,7 @@ var
   FTLib : PFT_Library;                // handle to FreeType library
   res : integer;
   Console1, Console2 : TWindowHandle;
+  size: integer;
 
 procedure WaitForSDDrive;
 begin
@@ -158,8 +159,19 @@ begin
   res := FT_Init_FreeType (FTLib);    // initialise library
   if (res = 0) then
     begin
-      DrawText (Console2, 10, 60, 'FreeType 2 demo.', 'ariali', 48, COLOR_GREEN);
-      DrawText (Console2, 10, 120, 'Welcome to the world of Ultibo.', 'arialbi', 48, COLOR_RED);
+
+    For size := 8 to 64 do
+       begin
+            DrawText (Console2, 10, 60, 'FreeType 2 demo.', 'ariali', size-1, COLOR_WHITE);
+            DrawText (Console2, 10, 120, 'Welcome to the world of Ultibo.', 'arialbi', size-1, COLOR_WHITE);
+
+
+            DrawText (Console2, 10, 60, 'FreeType 2 demo.', 'ariali', size, COLOR_GREEN);
+            DrawText (Console2, 10, 120, 'Welcome to the world of Ultibo.', 'arialbi', size, COLOR_RED);
+
+            Sleep(100);
+
+       end;
       FT_Done_FreeType (FTLib);       // close library
     end;
   Log ('All done.');
