@@ -16,3 +16,7 @@ Simple graphics with Ultibo (bare metal pascal on pi)
         
     bouncingboxes.pas
         demo of double buffering - 200 boxes bouncing off sides of screen
+    
+![](https://i.imgur.com/kkHIkVDs.jpg)
+    camera-videocube.lpr
+         records a few seconds of video from camera, then plays it back on a 3d rotating cube
